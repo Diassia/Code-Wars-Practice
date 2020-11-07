@@ -10,26 +10,14 @@ def letter_iterate(word):
     for letter in word_string:
         print(letter)
 
-# def duplicate_encode(word):
-#     duplicate_string = '' # empty string for bracket string
-#     for letter in word_string:  # for each letter in the word
-#         if letter == word_string[1]: # if the letter matches the following letter
-#             duplicate_string += ')'
-#         else:
-#             # need to iterate again to check next letter
-#             duplicate_string += '('
-#     print(duplicate_string)
-
-#second function for "is x = y"
+#second function for "is x = y" with for loop
 
 def duplicate_encode(word):
     duplicate_string = ''
     for index, letter in enumerate(word_string [:-1]): #enumerate will loop over something (e.g. the string and count)
         if letter == word_string[index+1]:
             duplicate_string += ')'
-            #another for
         else:
-            #continue to iterate to check next letter?
             duplicate_string += '('
     print(duplicate_string)
 
@@ -37,7 +25,6 @@ def duplicate_encode(word):
 
 # count()
 
-# word_string = 'butt'
 word_string = 'kayleigh!'
 
 letter_iterate(word_string)
