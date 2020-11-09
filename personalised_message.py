@@ -1,0 +1,23 @@
+# Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+# Use conditionals to return the proper message:
+
+# case	return
+# name equals owner	'Hello boss'
+# otherwise	'Hello guest'
+
+def greet(name, owner):
+    if name == owner:
+        return 'Hello, boss'
+    else:
+        return 'Hello, guest'
+
+name = 'Kayleigh'
+owner = 'Bob'
+
+print(greet(name, owner))
+
+    # Top Solution:
+
+    # def greet(name, owner):
+    #     return "Hello boss" if name == owner else "Hello guest"
