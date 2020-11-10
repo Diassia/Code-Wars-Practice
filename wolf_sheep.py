@@ -14,12 +14,16 @@
 # warn_the_sheep(['sheep', 'sheep', 'wolf']) == 'Pls go away and stop eating my sheep'
 
 def warn_the_sheep(queue):
-    for animal in queue:
-        if animal in queue[-1] == 'wolf':
-            return 'Pls go away and stop eating my sheep'
-        if animal not in queue[-1] == 'wolf':
-            return 'Oi! Sheep number ! You are about to be eaten by a wolf!'
+    if queue[-1] == 'wolf':
+        return 'Pls go away and stop eating my sheep'
 
-queue = ['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf']
+    wolf_place = 0
+    for index in range(len(queue)):
+        if queue[index] == 'wolf':
+            wolf_place = index
+    sheep_number = len(queue) - (wolf_place + 1)
+    return f'Oi! Sheep number {sheep_number}! You are about to be eaten by a wolf!'
+
+queue = ['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf', 'sheep']
 
 print(warn_the_sheep(queue))
