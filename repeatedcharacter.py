@@ -66,35 +66,6 @@ import collections
         #else:
             #print ( to new string
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def duplicate_encode(word):
     result = ''
     # problem: map every letter in word to ( or ) based on whether or not more than 1 occurrence appears of that letter
