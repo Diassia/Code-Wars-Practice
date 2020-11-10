@@ -34,3 +34,8 @@ d = 'L'
 a = [1, 4, 5, 3, 5]
 
 print(flip(d, a))
+
+
+# Top CodeWars solution:
+#     def flip(d,a):
+#         return sorted(a, reverse=d=='L')
