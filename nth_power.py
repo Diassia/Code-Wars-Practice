@@ -11,7 +11,7 @@ def index(array, n):
     #         return -1
     # except IndexError:
     #     return -1
-    if n > len(array): # will check in 'n' is larger than the length of the array
+    if n >= len(array): # will check in 'n' is larger than the length of the array
         return -1
     result = array[n]**n
     return result
