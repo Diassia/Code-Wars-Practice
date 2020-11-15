@@ -38,10 +38,10 @@ def remove_parentheses(s):
 
         while remove:
             if character != ')':
-                number_of_close += 1
                 break
             else:
                 remove = False
+                number_of_close += 1
 
         if remove == True or character == ')':
             corrected_str += ''
