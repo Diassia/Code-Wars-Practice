@@ -11,13 +11,8 @@
 import re
 
 def remove_parentheses(s):
-    corrected_str = ''
-    
-    
-    return corrected_str
+    return re.sub(r'\(.*\)', '', s) # re.sub(pattern, repl, string, count=0, flags=0)
 
-
-
-s = "example(unwanted thing)example"
+s = "a (bc d)e"
 
 print(remove_parentheses(s))
