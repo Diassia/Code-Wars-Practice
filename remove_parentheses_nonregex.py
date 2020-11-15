@@ -11,22 +11,14 @@
 def remove_parentheses(s):
     corrected_str = ''
 
-    number_of_open = 0
-    number_of_close = 0
-
-    remove = False
+    bracket_depth = 0
 
     for character in s:     
         if character == '(':
-            remove = True
-            number_of_open += 1
+            bracket_depth += 1
         elif character == ')':
-            number_of_close += 1
-            if number_of_open > number_of_close:
-                remove = True
-            else:
-                remove = False
-        elif remove == False:
+            bracket_depth -= 1
+        elif bracket_depth == 0:
             corrected_str += character
 
     return corrected_str
