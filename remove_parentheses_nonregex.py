@@ -8,14 +8,6 @@
 
 # "exampleexample"
 
-# def remove_mode(str):
-#     # remove
-#     if character == ')':
-#         remove_parentheses(s)
-
-# def remove_mode(remove, s):
-
-
 def remove_parentheses(s):
     corrected_str = ''
 
@@ -23,34 +15,19 @@ def remove_parentheses(s):
     number_of_close = 0
 
     remove = False
-# remove mode
-# print to new string mode
 
     for character in s:     
-        
-        if number_of_open > number_of_close:
-            remove = True
-        
         if character == '(':
             remove = True
-            corrected_str += ''
             number_of_open += 1
-
-        while remove:
-            if character != ')':
-                break
+        elif character == ')':
+            number_of_close += 1
+            if number_of_open > number_of_close:
+                remove = True
             else:
                 remove = False
-                number_of_close += 1
-
-        if remove == True or character == ')':
-            corrected_str += ''
-
-        else:
+        elif remove == False:
             corrected_str += character
-
-
-    # return remove == False
 
     return corrected_str
 
