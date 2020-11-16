@@ -18,7 +18,6 @@ def new_list(size, add_to_multiply, multiply_2):
         multiplication_no += 1
 
     return new_table
-        
 
 def multiplication_table(size):
     table = []
@@ -32,11 +31,8 @@ def multiplication_table(size):
         table.append(table_to_add)
         multiply_1 += 1
             
-    # if multiply_2 = size:
-    
     return table
 
-
-size = 3
+size = 10
 
 print(multiplication_table(size))
