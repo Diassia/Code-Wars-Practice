@@ -36,3 +36,14 @@ def multiplication_table(size):
 size = 10
 
 print(multiplication_table(size))
+
+    # CodeWars solution:
+    #     def multiplication_table(size):
+    #         columns = []
+    #         for i in range(1,size+1):
+    #             rows = []
+    #             for j in range(1,size+1):
+    #                 rows.append(i*j)
+    #             columns.append(rows)
+                
+    #         return columns
