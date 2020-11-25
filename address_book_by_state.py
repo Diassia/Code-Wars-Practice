@@ -18,8 +18,8 @@ def by_state(str):
     split_lines = str.splitlines() # split string into list at new line
 
     for string in split_lines: # for loop will find the state initials and replace with value from dictionary
-        state_slice = string[-2:] # state initial slice
-        state_string = states[state_slice] # dictionary value from key slice
+        # state_slice = string[-2:] # state initial slice
+        state_string = states[string[-2:]] # dictionary value from key slice
         # slice_string = string[:-2] + state_string # concat for original string place replacement string
 
         list_of_details = string.split()
@@ -31,6 +31,7 @@ def by_state(str):
             'state_name': state_string
         }
         
+        # append dictionary address details to ordered_string outside for loop
         ordered_string += complete_dictionary[number]['state_name'] + '\n..... ' + complete_dictionary[number]['name'] + ' ' + complete_dictionary[number]['address'] + ' ' + complete_dictionary[number]['state_name'] + '\n'
         
         number += 1
