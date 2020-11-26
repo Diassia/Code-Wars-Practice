@@ -1,3 +1,11 @@
+def what_state(states, complete_details_dictionary):
+    state_address_string = ''
+
+    for state_name in complete_details_dictionary.values():
+        if 
+
+    return state_address_string
+
 def by_state(str):
     number = 1
 
@@ -31,12 +39,14 @@ def by_state(str):
             'state': state_code,
             'state_name': states[state_code]
         }
+        number += 1 # will add 1 to number to change nested dictionary to number + 1
+    
+    what_state(states, complete_details_dictionary)
 
         # append dictionary address details to ordered_string outside for loop
-        ordered_string += complete_details_dictionary[number]['state_name'] + '\n..... ' + complete_details_dictionary[number]['name'] + ' ' + complete_details_dictionary[number]['address'] + ' ' + complete_details_dictionary[number]['state_name'] + '\n'
-        
-        number += 1 # will add 1 to number to change nested dictionary to number + 1
-        
+        # ordered_string += complete_details_dictionary[number]['state_name'] + '\n..... ' + complete_details_dictionary[number]['name'] + ' ' + complete_details_dictionary[number]['address'] + ' ' + complete_details_dictionary[number]['state_name'] + '\n'
+
+
     print(complete_details_dictionary)
 
     return ordered_string
