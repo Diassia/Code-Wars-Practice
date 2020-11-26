@@ -6,11 +6,16 @@ exports.reverseWords = void 0;
 // "This is an example!" ==> "sihT si na !elpmaxe"
 // "double  spaces"      ==> "elbuod  secaps"
 function reverseWords(str) {
-    var sentence_string = str;
-    var string_array = sentence_string.split('');
-    return string_array.reverse().join('');
-    // let arrayOfString = Array.from(String(sentence_string), String)
-    // return "Go for it";
+    var sentenceString = str;
+    var stringArray = sentenceString.split(' ');
+    var arrayLength = stringArray.length;
+    var newString = '';
+    for (var i = 0; i < arrayLength; i++) {
+        var wordString = stringArray[i];
+        var wordArray = wordString.split('');
+        newString += wordArray.reverse().join('') + ' ';
+    }
+    return newString;
 }
 exports.reverseWords = reverseWords;
 console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));

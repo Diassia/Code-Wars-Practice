@@ -5,9 +5,19 @@
 // "double  spaces"      ==> "elbuod  secaps"
 
 export function reverseWords(str: string): string {
-    let sentence_string: string = str;
-    let string_array = sentence_string.split('');
-    return string_array.reverse().join('');
+    let sentenceString: string = str;
+    let stringArray: string[] = sentenceString.split(' ');
+    let arrayLength = stringArray.length;
+    
+    let newString: string = ''
+
+    for (let i = 0; i < arrayLength; i++) {
+        let wordString: string = stringArray[i]
+        let wordArray = wordString.split('')
+        newString += wordArray.reverse().join('') + ' ';
+    }
+
+    return newString
 }
 
 console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
