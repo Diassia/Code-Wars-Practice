@@ -1,9 +1,9 @@
 def by_state(str):
     number = 1
 
-    ordered_string = ''
+    ordered_string = '' # the output string with ordered addresses by state
 
-    complete_dictionary = {}
+    complete_details_dictionary = {} # will be a numbered nested dictionary with details for all addresses
     states = {
         'AZ': 'Arizona',
         'CA': 'California',
@@ -17,28 +17,27 @@ def by_state(str):
 
     split_lines = str.splitlines() # split string into list at new line
 
-    for string in split_lines: # for loop will find the state initials and replace with value from dictionary
-        # state_slice = string[-2:] # state initial slice
-        state_string = states[string[-2:]] # dictionary value from key slice
-        # slice_string = string[:-2] + state_string # concat for original string place replacement string
-
-        list_of_details = string.split()
-        complete_dictionary[number] = { # creates a nested dictionary for each address with name, address, city, state, state_name and removes commas
-            'name': (' '.join(list_of_details[0:2])).replace(',', ''),
-            'address': (' '.join(list_of_details[2:5])).replace(',', ''),
-            'city': ''.join(list_of_details[5]),
-            'state': ''.join(list_of_details[6]),
-            'state_name': state_string
+    for person_string in split_lines: # for loop will find the state initials and replace with value from dictionary
+        person_detail_list = person_string.split(',')
+        print(person_detail_list)
+        name = person_detail_list[0]
+        address = person_detail_list[1]
+        city_and_state = person_detail_list[2]
+        state_code = city_and_state[-2:]
+        complete_details_dictionary[number] = { # creates a nested dictionary for each address with name, address, city, state, state_name and removes commas
+            'name': name,
+            'address': address,
+            'city': city_and_state[:-2],
+            'state': state_code,
+            'state_name': states[state_code]
         }
-        
+
         # append dictionary address details to ordered_string outside for loop
-        ordered_string += complete_dictionary[number]['state_name'] + '\n..... ' + complete_dictionary[number]['name'] + ' ' + complete_dictionary[number]['address'] + ' ' + complete_dictionary[number]['state_name'] + '\n'
+        ordered_string += complete_details_dictionary[number]['state_name'] + '\n..... ' + complete_details_dictionary[number]['name'] + ' ' + complete_details_dictionary[number]['address'] + ' ' + complete_details_dictionary[number]['state_name'] + '\n'
         
-        number += 1
-
+        number += 1 # will add 1 to number to change nested dictionary to number + 1
         
-
-    print(complete_dictionary)
+    print(complete_details_dictionary)
 
     return ordered_string
 
