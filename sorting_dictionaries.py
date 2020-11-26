@@ -8,12 +8,12 @@
 # sort_dict({3:1, 2:2, 1:3}) == [(1,3), (2,2), (3,1)]
 # sort_dict({1:2, 2:4, 3:6}) == [(3,6), (2,4), (1,2)]
 
-def sort_dict(d):
-    sorted_list_tuples = []
-    sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
-    for i in sorted_dict:
-        sorted_list_tuples.append(tuple((i[0], i[1])))
-    return sorted_list_tuples
+# def sort_dict(d):
+#     sorted_list_tuples = []
+#     sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
+#     for i in sorted_dict:
+#         sorted_list_tuples.append(tuple((i[0], i[1])))
+#     return sorted_list_tuples
     
     # list(sorted_dict.items())
 
@@ -21,6 +21,14 @@ def sort_dict(d):
 #     sorted_dict = {k:d[k] for k in sorted(d)}
 #     return list(sorted_dict.items())
 
+def sort_dict(d):
+    return [(k, v) for k, v in sorted(d.items(), key=lambda x:x[1], reverse=True)]
+
 print(sort_dict({3:1, 2:2, 1:3}))
 print(sort_dict({1:2, 2:4, 3:6}))
 print(sort_dict({1:5, 3:10, 2:2, 6:3, 8:8}))
+
+
+# CodeWars Solution:
+    # def sort_dict(d):
+    #   return sorted(d.items(), key=lambda x: x[1], reverse=True)
