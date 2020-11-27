@@ -6,7 +6,7 @@
 
 export function reverseWords(str: string): string {
     let sentenceString: string = str;
-    let stringArray: string[] = sentenceString.split(' ');
+    let stringArray: string[] = sentenceString.split(/(\s+)/);
     let arrayLength = stringArray.length;
     
     let newString: string = ''
@@ -14,7 +14,7 @@ export function reverseWords(str: string): string {
     for (let i = 0; i < arrayLength; i++) {
         let wordString: string = stringArray[i]
         let wordArray = wordString.split('')
-        newString += wordArray.reverse().join('') + ' ';
+        newString += wordArray.reverse().join('');
     }
 
     return newString
