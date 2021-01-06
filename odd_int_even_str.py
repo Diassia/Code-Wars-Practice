@@ -23,41 +23,23 @@ numbers = {
     9: 'nine'
 }
 
-# def repeat_string(num_string, position): # maybe include reverse option for flipped rules
-#     converted_string = ''
-#     number_position = position
-#     lowercase = True
-#     string_to_repeat = num_string # string
-
-#     while len(number_position) > len(converted_string):
-#         if lowercase == True:
-#             converted_string += num_string
-#         else:
-#             converted_string += (string_to_repeat).upper()
-
-#     return converted_string
-
 def repeat_string(num_string, position, reverse_rules): # maybe include reverse option for flipped rules
     converted_string = ''
-    number_position = position
-    string_to_repeat = num_string # string
 
     if reverse_rules == True:
         lowercase = False
     else:
         lowercase = True
 
-    while number_position > len(converted_string):
+    while position > len(converted_string):
         if lowercase == True:
             converted_string += num_string
             lowercase = False
         else:
-            converted_string += (string_to_repeat).upper()
+            converted_string += (num_string).upper()
             lowercase = True
-    
-    sliced_string = converted_string[:position]
 
-    return sliced_string
+    return converted_string[:position]
 
 def conv(num):
     number_string = str(num)
@@ -71,7 +53,6 @@ def conv(num):
                     if integer == int(number):
                         reverse_rules = False
                         string += repeat_string(num_string, position, reverse_rules)
-                        # string += num_string[:position] # print part string based on position
                         position += 1
             else:
                 position += 1
@@ -95,7 +76,7 @@ def conv(num):
 print(conv(0)) # expect "0"
 print(conv(1101)) # expect "11zer1"
 print(conv(11)) # expect "11"
-print(conv(56789456))
+print(conv(56789456)) # expect "5si7eigh9fourFO5sixSIXsi"
 print(conv(54563)) # expect "F4FIV6THREE"
 print(conv(47309534)) # expect "f73zero953fourFOUR"
 print(conv(34266262106)) # expect "T4266262ONEoneONE06"
