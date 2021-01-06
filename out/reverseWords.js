@@ -7,13 +7,13 @@ exports.reverseWords = void 0;
 // "double  spaces"      ==> "elbuod  secaps"
 function reverseWords(str) {
     var sentenceString = str;
-    var stringArray = sentenceString.split(' ');
+    var stringArray = sentenceString.split(/(\s+)/);
     var arrayLength = stringArray.length;
     var newString = '';
     for (var i = 0; i < arrayLength; i++) {
         var wordString = stringArray[i];
         var wordArray = wordString.split('');
-        newString += wordArray.reverse().join('') + ' ';
+        newString += wordArray.reverse().join('');
     }
     return newString;
 }
