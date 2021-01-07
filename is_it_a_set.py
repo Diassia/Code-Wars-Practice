@@ -19,29 +19,50 @@
 
 # Your task is to return a boolean, indicating if the given input properties qualify as a valid set - true if they do false if not.
 
-def test_valid_set_same(list): # if a list is all the same = True, else = False
-    boolean = True
+# def test_valid_set_same(list): # if a list is all the same = True, else = False
+#     boolean = True
+#     ele = list[0]
+
+#     for item in list:
+#         if ele != item:
+#             boolean = False
+#             break
+#     return boolean
+
+# def test_valid_set_all_different(list): # if a list is all different = True, else = False
+#     check = 0
+#     check = len(set(list)) == len(list)
+#     if(check):
+#         return True
+#     else:
+#         return False
+
+def test_valid_set(list):
+    boolean_same = True # check for same
     ele = list[0]
 
     for item in list:
         if ele != item:
-            boolean = False
+            boolean_same = False
             break
-    return boolean
 
-def test_valid_set_all_different(list): # if a list is all different = True, else = False
-    check = 0
+    check = 0 # check for different
     check = len(set(list)) == len(list)
     if(check):
-        return True
+        boolean_different = True
     else:
+        boolean_different = False
+
+    if boolean_same + boolean_different == True:
+        return True
+    else: 
         return False
 
 def is_valid_set(quantities, shapes, colours, patterns):
-    quantities_check = test_valid_set_same(quantities) or test_valid_set_all_different(quantities)
-    shapes_check = test_valid_set_same(shapes) or test_valid_set_all_different(shapes)
-    colours_check = test_valid_set_same(colours) or test_valid_set_all_different(colours)
-    patterns_check = test_valid_set_same(patterns) or test_valid_set_all_different(patterns)
+    quantities_check = test_valid_set(quantities)
+    shapes_check = test_valid_set(shapes)
+    colours_check = test_valid_set(colours)
+    patterns_check = test_valid_set(patterns)
 
     if quantities_check == True and shapes_check == True and colours_check == True and patterns_check == True:
         return True
