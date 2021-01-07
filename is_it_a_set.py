@@ -19,44 +19,8 @@
 
 # Your task is to return a boolean, indicating if the given input properties qualify as a valid set - true if they do false if not.
 
-# def test_valid_set_same(list): # if a list is all the same = True, else = False
-#     boolean = True
-#     ele = list[0]
-
-#     for item in list:
-#         if ele != item:
-#             boolean = False
-#             break
-#     return boolean
-
-# def test_valid_set_all_different(list): # if a list is all different = True, else = False
-#     check = 0
-#     check = len(set(list)) == len(list)
-#     if(check):
-#         return True
-#     else:
-#         return False
-
 def test_valid_set(list):
-    boolean_same = True # check for same
-    ele = list[0]
-
-    for item in list:
-        if ele != item:
-            boolean_same = False
-            break
-
-    check = 0 # check for different
-    check = len(set(list)) == len(list)
-    if(check):
-        boolean_different = True
-    else:
-        boolean_different = False
-
-    if boolean_same + boolean_different == True:
-        return True
-    else: 
-        return False
+    return (len(set(list)) == len(list)) or (len(set(list)) == 1)
 
 def is_valid_set(quantities, shapes, colours, patterns):
     quantities_check = test_valid_set(quantities)
