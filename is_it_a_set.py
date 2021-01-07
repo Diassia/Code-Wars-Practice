@@ -20,31 +20,18 @@
 # Your task is to return a boolean, indicating if the given input properties qualify as a valid set - true if they do false if not.
 
 def test_valid_set_same(list): # if a list is all the same = True, else = False
-    # boolean = True
+    boolean = True
     ele = list[0]
-    count_same = 0
 
     for item in list:
         if ele != item:
-            # boolean = False
+            boolean = False
             break
-        else:
-            count_same += 1
-
-    if count_same == 3:
-        return True
-    # elif count_same == 2:
-    #     return False
-    else:
-        return False
-
-    # return boolean
+    return boolean
 
 def test_valid_set_all_different(list): # if a list is all different = True, else = False
     check = 0
-
     check = len(set(list)) == len(list)
-
     if(check):
         return True
     else:
@@ -56,25 +43,10 @@ def is_valid_set(quantities, shapes, colours, patterns):
     colours_check = test_valid_set_same(colours) or test_valid_set_all_different(colours)
     patterns_check = test_valid_set_same(patterns) or test_valid_set_all_different(patterns)
 
-    # if quantities_check == True or shapes_check == True or colours_check == True or patterns_check == True:
-    #     return True
     if quantities_check == True and shapes_check == True and colours_check == True and patterns_check == True:
         return True
     else:
         return False
-    
-
-    # if quantities_check == True or shapes_check == True and colours_check == True and patterns_check == True:
-    #     return True
-    # else:
-    #     quantities_check = test_valid_set_all_different(quantities)
-    #     shapes_check = test_valid_set_all_different(shapes)
-    #     colours_check = test_valid_set_all_different(colours)
-    #     patterns_check = test_valid_set_all_different(patterns)
-    #     if quantities_check == False or shapes_check == False or colours_check == False or patterns_check == False:
-    #         return False
-    #     else:
-    #         return True
 
 print(is_valid_set([1,2,3], ['diamond','snake','capsule'], ['green','blue','red'], ['blank','striped','solid'])) # expect True
 print(is_valid_set([1,1,1], ['capsule','diamond','snake'], ['red','red','red'], ['striped','blank','solid'])) # expect True
