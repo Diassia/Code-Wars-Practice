@@ -56,9 +56,9 @@ def is_valid_set(quantities, shapes, colours, patterns):
     colours_check = test_valid_set_same(colours) or test_valid_set_all_different(colours)
     patterns_check = test_valid_set_same(patterns) or test_valid_set_all_different(patterns)
 
-    if quantities_check == True or shapes_check == True or colours_check == True or patterns_check == True:
-        return True
-    elif quantities_check == True and shapes_check == True and colours_check == True and patterns_check == True:
+    # if quantities_check == True or shapes_check == True or colours_check == True or patterns_check == True:
+    #     return True
+    if quantities_check == True and shapes_check == True and colours_check == True and patterns_check == True:
         return True
     else:
         return False
