@@ -6,24 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSum = void 0;
 function getSum(a, b) {
     var array = [];
-    // let array_negative = []
     if (a > b) {
         for (var i = a; i >= b; i--) {
             array.push(i);
         }
     }
     else {
-        for (var i = a; i <= b; i++) { // start, stop, increment
-            // if (i < 0) {
-            //     array_negative.push(i)
-            // }else{
+        for (var i = a; i <= b; i++) {
             array.push(i);
-            // }
         }
     }
-    // let array_sum1 = 
-    // let array_sum2 = array_negative.reduce((a, b) => a + b, 0)
-    // 
     return array.reduce(function (a, b) { return a + b; }, 0);
 }
 exports.getSum = getSum;

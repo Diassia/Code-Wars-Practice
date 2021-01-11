@@ -4,30 +4,33 @@
 
 export function getSum(a: number, b:number): number {
     let array = []
-    // let array_negative = []
-
     if (a > b) {
         for(let i = a; i >= b; i--) {
             array.push(i);
         }
     }else{
-        for (let i = a; i <= b; i++) {  // start, stop, increment
-            // if (i < 0) {
-            //     array_negative.push(i)
-            // }else{
+        for (let i = a; i <= b; i++) {
             array.push(i);
-            // }
         }
     }
-
-    
-
-    // let array_sum1 = 
-    // let array_sum2 = array_negative.reduce((a, b) => a + b, 0)
-// 
     return array.reduce((a, b) => a + b, 0)
 }
 
 console.log(getSum(0, -1)); // expect -1
 console.log(getSum(0, 1)); // expect 1
 console.log(getSum(3, 40));
+
+
+// Top CodeWars Solution:
+// export function getSum(a: number, b: number): number {
+//     const start = a < b ? a : b;
+//     const end = start === a ? b : a;
+    
+//     let sum = 0;
+    
+//     for (let i = start; i <= end; i++) {
+//       sum += i;
+//     }
+    
+//     return sum;
+//   }
