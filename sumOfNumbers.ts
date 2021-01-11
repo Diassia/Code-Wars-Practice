@@ -3,7 +3,7 @@
 // Note: a and b are not ordered!
 
 export function getSum(a: number, b:number): number {
-    let array = []
+    let array: number[] = []
     if (a > b) {
         for(let i = a; i >= b; i--) {
             array.push(i);
