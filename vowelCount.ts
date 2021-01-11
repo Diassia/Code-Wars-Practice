@@ -4,6 +4,7 @@
 
 // The input string will only consist of lower case letters and/or spaces.
 
+// first attempt
 // export class Kata {
 //     static getCount(str: string) {
 //         let vowelList = 'aeiou';
@@ -18,6 +19,7 @@
 //     }
 // }
 
+// regex attempt
 export class Kata {
     static getCount(str:string) {
         let m = str.match(/[aeiou]/gi); // g makes it search the whole string, i makes it case-insensitive
@@ -26,3 +28,11 @@ export class Kata {
 }
 
 console.log(Kata.getCount("abracadabra"))
+
+//Top CodeWars Solution:
+// export class Kata {
+//     static getCount(str: string) {
+//       let list = str.match(/[aeiou]/gi);
+//       return list ? list.length : 0;
+//     }
+//   }
