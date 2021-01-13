@@ -18,15 +18,28 @@
 // p% > 0 (constant interest rate per year)
 // a >= a0 (the amount you want to have)
 
+function padNumber(number) {
+    if(number < 10) {
+        return "0" + number.toString();
+    } else {
+        return number.toString();
+    }
+}
+
+// export function pad_date(finalDate) {
+//     let padded_date = ''
+
+//     const year = finalDate.getFullYear();
+//     const month = finalDate.getMonth();
+//     const day = finalDate.getDate();
+
+//     return padded_date
+// }
+
 export function dateNbDays(a0: number, a: number, p: number): string {
     let string = '';
-    // let aWanted = a - a0; // amount of money wanted
-    // console.log(aWanted);
 
     let interestPerDay = p / 36000;
-    console.log(interestPerDay);
-    // console.log(aWanted / interestPerDay);
-
     let dayCount = 0;
 
     for (let count = a0; count <= a; count += (interestPerDay * count)) {
@@ -36,25 +49,31 @@ export function dateNbDays(a0: number, a: number, p: number): string {
 
     console.log(dayCount);
 
-    // console.log();
-    // console.log();
-
-    // let aPerYear = (p / 100) * aWanted; // amount of interest rate per year
-    // console.log(aPerYear);
+    let depositDate = new Date("2016-01-01");
+    console.log(depositDate);
+    // depositDate.toISOString();
     
-    // let aPerDay = ((p / 36000) / 100) * aWanted; // amount of interest rate per year
-    // console.log(aPerDay);
+    const year = depositDate.getFullYear();
+    const month = depositDate.getMonth();
+    const day = depositDate.getDate();
+    
+    let finalDate = new Date(year, month, day + dayCount)
 
+    // let month_string = month.toString();
+    // if (month_string.length <= 1) {
+    //     pad_date(finalDate);
+    // }
 
-    // console.log(aPerDay);
+    // const year_final = finalDate.getFullYear();
+    // const month_final = 
+    // const day_final = ;
 
-    // let total = aWanted / aPerDay;
-    // console.log(total);
-
-    // let noOfYears = total / 365;
-    // console.log(noOfYears);
-
-    return string;
+    let new_month = padNumber(finalDate.getMonth() + 1);
+    let new_day = padNumber(finalDate.getDate())
+    
+    let formatted_date = finalDate.getFullYear() + "-" + new_month + "-" + new_day;
+    
+    return formatted_date;
 }
 
 console.log(dateNbDays(100, 101, 0.98));
