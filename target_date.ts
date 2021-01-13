@@ -18,7 +18,7 @@
 // p% > 0 (constant interest rate per year)
 // a >= a0 (the amount you want to have)
 
-function padNumber(number) {
+function padNumber(number: number): string {
     if(number < 10) {
         return "0" + number.toString();
     } else {
@@ -26,54 +26,17 @@ function padNumber(number) {
     }
 }
 
-// export function pad_date(finalDate) {
-//     let padded_date = ''
-
-//     const year = finalDate.getFullYear();
-//     const month = finalDate.getMonth();
-//     const day = finalDate.getDate();
-
-//     return padded_date
-// }
-
 export function dateNbDays(a0: number, a: number, p: number): string {
-    let string = '';
-
     let interestPerDay = p / 36000;
     let dayCount = 0;
 
     for (let count = a0; count <= a; count += (interestPerDay * count)) {
-        console.log("This is day " + dayCount + (". Your count is " + count));
         dayCount += 1;
     };
 
-    console.log(dayCount);
-
     let depositDate = new Date("2016-01-01");
-    console.log(depositDate);
-    // depositDate.toISOString();
-    
-    const year = depositDate.getFullYear();
-    const month = depositDate.getMonth();
-    const day = depositDate.getDate();
-    
-    let finalDate = new Date(year, month, day + dayCount)
-
-    // let month_string = month.toString();
-    // if (month_string.length <= 1) {
-    //     pad_date(finalDate);
-    // }
-
-    // const year_final = finalDate.getFullYear();
-    // const month_final = 
-    // const day_final = ;
-
-    let new_month = padNumber(finalDate.getMonth() + 1);
-    let new_day = padNumber(finalDate.getDate())
-    
-    let formatted_date = finalDate.getFullYear() + "-" + new_month + "-" + new_day;
-    
-    return formatted_date;
+    let finalDate = new Date(depositDate.getFullYear(), depositDate.getMonth(), depositDate.getDate() + dayCount)
+    return finalDate.getFullYear() + "-" + padNumber(finalDate.getMonth() + 1) + "-" + padNumber(finalDate.getDate());
 }
 
 console.log(dateNbDays(100, 101, 0.98));

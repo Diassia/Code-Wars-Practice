@@ -23,40 +23,16 @@ function padNumber(number) {
         return number.toString();
     }
 }
-// export function pad_date(finalDate) {
-//     let padded_date = ''
-//     const year = finalDate.getFullYear();
-//     const month = finalDate.getMonth();
-//     const day = finalDate.getDate();
-//     return padded_date
-// }
 function dateNbDays(a0, a, p) {
-    var string = '';
     var interestPerDay = p / 36000;
     var dayCount = 0;
     for (var count = a0; count <= a; count += (interestPerDay * count)) {
-        console.log("This is day " + dayCount + (". Your count is " + count));
         dayCount += 1;
     }
     ;
-    console.log(dayCount);
     var depositDate = new Date("2016-01-01");
-    console.log(depositDate);
-    // depositDate.toISOString();
-    var year = depositDate.getFullYear();
-    var month = depositDate.getMonth();
-    var day = depositDate.getDate();
-    var finalDate = new Date(year, month, day + dayCount);
-    // let month_string = month.toString();
-    // if (month_string.length <= 1) {
-    //     pad_date(finalDate);
-    // }
-    // const year_final = finalDate.getFullYear();
-    // const month_final = 
-    // const day_final = ;
-    var new_month = padNumber(finalDate.getMonth() + 1);
-    var new_day = padNumber(finalDate.getDate());
-    var formatted_date = finalDate.getFullYear() + "-" + new_month + "-" + new_day;
+    var finalDate = new Date(depositDate.getFullYear(), depositDate.getMonth(), depositDate.getDate() + dayCount);
+    var formatted_date = finalDate.getFullYear() + "-" + padNumber(finalDate.getMonth() + 1) + "-" + padNumber(finalDate.getDate());
     return formatted_date;
 }
 exports.dateNbDays = dateNbDays;
