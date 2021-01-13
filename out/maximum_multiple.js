@@ -13,15 +13,9 @@ exports.maxMultiple = void 0;
 function maxMultiple(divisor, bound) {
     var array = [];
     var array2 = [];
-    for (var count = 0; count < bound; count++) {
+    for (var count = 0; count <= bound; count++) {
         array.push(count);
     }
-    // console.log(array);
-    // array.forEach(element => {
-    //     if (element % divisor) {
-    //         array2.push(element);
-    //     }
-    // });
     for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
         var i = array_1[_i];
         if (i % divisor == 0) {
@@ -29,10 +23,10 @@ function maxMultiple(divisor, bound) {
         }
     }
     ;
-    // return array2[-1]
     return array2[array2.length - 1];
 }
 exports.maxMultiple = maxMultiple;
 console.log(maxMultiple(2, 7));
 console.log(maxMultiple(3, 10));
+console.log(maxMultiple(10, 50));
 //# sourceMappingURL=maximum_multiple.js.map
