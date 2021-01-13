@@ -22,4 +22,14 @@ exports.getSum = getSum;
 console.log(getSum(0, -1)); // expect -1
 console.log(getSum(0, 1)); // expect 1
 console.log(getSum(3, 40));
+// Top CodeWars Solution:
+// export function getSum(a: number, b: number): number {
+//     const start = a < b ? a : b;
+//     const end = start === a ? b : a;
+//     let sum = 0;
+//     for (let i = start; i <= end; i++) {
+//       sum += i;
+//     }
+//     return sum;
+//   }
 //# sourceMappingURL=sumOfNumbers.js.map

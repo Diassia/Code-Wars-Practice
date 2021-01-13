@@ -32,7 +32,6 @@ def string_breakers(n, st):
 
 print(string_breakers(5, 'This is an example string'))
 
-
 # Top CodeWars solutions:
 # from re import sub, findall
 

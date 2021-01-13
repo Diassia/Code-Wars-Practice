@@ -1,0 +1,38 @@
+"use strict";
+// Task
+// Given a Divisor and a Bound , Find the largest integer N , Such That ,
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.maxMultiple = void 0;
+// Conditions :
+// N is divisible by divisor
+// N is less than or equal to bound
+// N is greater than 0.
+// Notes
+// The parameters (divisor, bound) passed to the function are only positive values .
+// It's guaranteed that a divisor is Found .
+function maxMultiple(divisor, bound) {
+    var array = [];
+    var array2 = [];
+    for (var count = 0; count < bound; count++) {
+        array.push(count);
+    }
+    // console.log(array);
+    // array.forEach(element => {
+    //     if (element % divisor) {
+    //         array2.push(element);
+    //     }
+    // });
+    for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
+        var i = array_1[_i];
+        if (i % divisor == 0) {
+            array2.push(i);
+        }
+    }
+    ;
+    // return array2[-1]
+    return array2[array2.length - 1];
+}
+exports.maxMultiple = maxMultiple;
+console.log(maxMultiple(2, 7));
+console.log(maxMultiple(3, 10));
+//# sourceMappingURL=maximum_multiple.js.map
