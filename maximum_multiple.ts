@@ -15,18 +15,18 @@
 export function maxMultiple(divisor: number, bound: number): number {
     let array = [];
     let array2 = [];
-    
-    for (let count = 0; count <= bound; count++) {
+
+    for (let count = 0; count <= bound; count++) { // iterates through numbers up to bound and pushes result to "array"
         array.push(count);
     }
 
-    for (let i of array) {
+    for (let i of array) { // iterates through "array" and checks if element is divisible by divisor, pushes result to "array2"
         if (i % divisor == 0) {
             array2.push(i);
         }
     };
 
-    return array2[array2.length -1];
+    return array2[array2.length -1]; // returns last element in array2
 }
 
 
