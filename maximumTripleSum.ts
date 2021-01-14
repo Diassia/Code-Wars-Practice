@@ -9,9 +9,8 @@
 // Repetition of numbers in the array/list could occur , So (duplications are not included when summing).
 
 export function maxTriSum(nums: number[]): number {
-    let num_set: Set<number> = new Set(nums.sort(function(a, b){return a - b}));
-    let num_array: number[] = Array.from(num_set);
-    let total_array: number[] = num_array.slice(-3);
+    let num_set: Set<number> = new Set(nums.sort((a, b) => a - b));
+    let total_array: number[] = (Array.from(num_set)).slice(-3);
     return total_array.reduce((total, number) => total + number);
 }
 
