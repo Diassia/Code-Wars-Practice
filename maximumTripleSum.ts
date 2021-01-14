@@ -11,7 +11,7 @@
 export function maxTriSum(nums: number[]): number {
     let num_set: Set<number> = new Set(nums.sort((a, b) => a - b));
     let total_array: number[] = (Array.from(num_set)).slice(-3);
-    return total_array.reduce((total, number) => total + number);
+    return total_array.reduce((a, b) => a + b);
 }
 
 console.log(maxTriSum([2, 9, 13, 10, 5, 2, 9, 5])); // expect 32
