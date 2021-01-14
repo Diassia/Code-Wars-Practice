@@ -32,8 +32,7 @@ function dateNbDays(a0, a, p) {
     ;
     var depositDate = new Date("2016-01-01");
     var finalDate = new Date(depositDate.getFullYear(), depositDate.getMonth(), depositDate.getDate() + dayCount);
-    var formatted_date = finalDate.getFullYear() + "-" + padNumber(finalDate.getMonth() + 1) + "-" + padNumber(finalDate.getDate());
-    return formatted_date;
+    return finalDate.getFullYear() + "-" + padNumber(finalDate.getMonth() + 1) + "-" + padNumber(finalDate.getDate());
 }
 exports.dateNbDays = dateNbDays;
 console.log(dateNbDays(100, 101, 0.98));
